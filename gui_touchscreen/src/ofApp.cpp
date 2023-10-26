@@ -13,8 +13,8 @@ void ofApp::setup() {
     int buttonGap = 100;     // Gap between buttons
     
     // Create the three large buttons in a horizontal array with a gap between them
-    for (int i = 0; i < 3; i++) {
-        int x = ofGetWidth() / 2 - (buttonWidth * 3 + buttonGap * 2) / 2 + i * (buttonWidth + buttonGap);
+    for (int i = 0; i < 2; i++) {
+        int x = ofGetWidth() / 2 - (buttonWidth * 2 + buttonGap * 1) / 2 + i * (buttonWidth + buttonGap);
         int y = ofGetHeight() / 2 - buttonHeight / 2;
         ofRectangle buttonRect(x, y + 215, buttonWidth, buttonHeight);
         buttons.push_back(buttonRect);
@@ -35,9 +35,8 @@ void ofApp::setup() {
     }
     
     // Assign names to large buttons
-    buttonNames.push_back("Male");
-    buttonNames.push_back("None-Binary");
-    buttonNames.push_back("Female");
+    buttonNames.push_back("BARITONE Voice");
+    buttonNames.push_back("SOPRANO Voice");
     
     // Assign names to small buttons
     smallButtonNames.push_back("Friendly");
@@ -68,7 +67,7 @@ void ofApp::update() {
         capturedFrame.setFromPixels(videoGrabber.getPixels());
         
         // Save the captured frame to a specific location
-        string desktopPath = "/Users/zhichengu/Documents/GitHub/D-iD/";
+        string desktopPath = "C:/Users/InbalAmram/Documents/GitHub/D-iD/";
         string fileName = "image.jpeg";
         string filePath = desktopPath + fileName;
         capturedFrame.save(filePath);
@@ -92,7 +91,7 @@ void ofApp::update() {
         smallButtonClicked[3] = false;
         smallButtonClicked[4] = false;
         webcamButtonEnabled   = false;
-    }
+    } 
     
     ofxOscMessage m;
     m.setAddress("/generation");
@@ -190,8 +189,11 @@ void ofApp::draw() {
         ofSetColor(geneButtonColor);
         ofDrawRectRounded(geneButton, 3);
         ofSetColor(255);
-        ofDrawBitmapString("Generation", geneButton.getX() + 7, geneButton.getY() + 32);
+        ofDrawBitmapString("Generation\n\nPlease wait 1 minute", geneButton.getX() + 7, geneButton.getY() + 32);
     }
+
+    ofSetColor(255);
+    ofDrawBitmapString(instructions, 1340, 120);
 }
 
 

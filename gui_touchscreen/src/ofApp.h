@@ -3,7 +3,7 @@
 #include "ofMain.h"
 #include "ofxOsc.h"
 
-#define HOST "192.168.1.100"
+#define HOST "192.168.1.72"
 #define PORT 8888
 
 class ofApp : public ofBaseApp {
@@ -44,5 +44,16 @@ public:
     
     ofxOscSender sender;
     
-    int bigChoice, smallChoice;
+    int bigChoice;
+    int smallChoice;
+
+    std::string instructions =
+        "1. Select 1 voice (top row)\n\n"
+        "2. Select 1 Adjective (bottom row)\n\n"
+        "3. Position your face in the middle of the frame of camera,\n   mouth closed, with a neutral expression.\n\n"
+        "4. Press the Webcam button (left)\n\n"
+        "5. A Generate button should appear on the left. If you are unhappy,\n   press reset and start from stage 1 again.\n\n"
+        "6. If you wish to proceed, press Generate button.\n\n"
+        "7. Wait 1 minute for generation and then enter the installation\n\n";
+
 };

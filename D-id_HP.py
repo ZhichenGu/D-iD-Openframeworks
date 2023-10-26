@@ -51,9 +51,6 @@ def download_video(url, save_path, vidDone):
             file.write(response.content)
             print(f"Video downloaded and saved as {save_path}")
             
-            vidDone += 1
-            print(f"Video Done {vidDone} ")
-            runOpenframeworks(vidDone)
 
     else:
         print(f"Failed to download video. Status code: {response.status_code}")
@@ -184,19 +181,49 @@ def gender_generation(address, *args):
         image_url = upload_image()
 
         # stand
-        # post_requests_mAndf("Hello nice to meet you!", image_url, gender, style, save_path_0, vidDone)
-        # post_requests_mAndf("i am all good. have a good night", image_url, gender, style, save_path_1, vidDone)
-        # # post_requests_mAndf("look, its Googles Memories Together! What an awesome vacation it was. We havent booked one for more than six months. We see a hotel rated superb 9 point 2 by 752 reviewers, 200 yards from the beach, No breakfast, Lowest price in 30 days. Booked! Congratulations! Confetti ball!", image_url, gender, style, save_path_0, vidDone)
-        # post_requests_mAndf("Hurray! It’s our best 10-second meditation! We have earned 1,250 coins. It's time for a walk. We should try to reach our daily step count. Start walking.", image_url, gender, style, save_path_2, vidDone)
-        # # # medium
-        # post_requests_mAndf("We’re on fire! It’s our best gallery walk! Keep walking and have a positive mindset. We are heading towards our daily step-count goal.", image_url, gender, style, save_path_3, vidDone)
-        # post_requests_mAndf("Our third favourite cousin started a new job at Tesla. Would we like to congratulate them? We’re so fucking proud of them and green with envy. Clap your hands.", image_url, gender, style, save_path_4, vidDone)
-        # post_requests_mAndf("Bravo! Clap your hands! Clap your hands!", image_url, gender, style, save_path_5, vidDone)
-        # post_requests_mAndf("We are the second-best visitor today! We are rated 4.7! Confetti! Red heart! Clapping hands!", image_url, gender, style, save_path_6, vidDone)
-        # # # high
-        # post_requests_mAndf("Our pulse is too fast. Our sleep quality is below average. We should reduce stress. Sit down in the corner and practice meditation. You’ve got this!", image_url, gender, style, save_path_7, vidDone)
-        # post_requests_mAndf("We have earned 3,534 coins. Well done!", image_url, gender, style, save_path_8, vidDone)
-        # post_requests_mAndf("We are doing great! Our bank balance is fantastic. Unfortunately, our screen time is well above average; please stop looking at the screens for a while.", image_url, gender, style, save_path_9, vidDone)
+        post_requests_mAndf("Hello nice to meet you!", image_url, gender, style, save_path_0, vidDone)
+        vidDone += 1
+        print(f"Video Done {vidDone} ")
+
+        post_requests_mAndf("i am all good. have a good night", image_url, gender, style, save_path_1, vidDone)
+        vidDone += 1
+        print(f"Video Done {vidDone} ")
+        
+        post_requests_mAndf("Hurray! It’s our best 10-second meditation! We have earned 1,250 coins. It's time for a walk. We should try to reach our daily step count. Start walking.", image_url, gender, style, save_path_2, vidDone)
+        vidDone += 1
+        print(f"Video Done {vidDone} ")
+        
+        # # medium
+        post_requests_mAndf("We’re on fire! It’s our best gallery walk! Keep walking and have a positive mindset. We are heading towards our daily step-count goal.", image_url, gender, style, save_path_3, vidDone)
+        vidDone += 1
+        print(f"Video Done {vidDone} ")
+
+        post_requests_mAndf("i am all good. have a good night", image_url, gender, style, save_path_4, vidDone)
+        vidDone += 1
+        print(f"Video Done {vidDone} ")
+
+        post_requests_mAndf("Bravo! Clap your hands! Clap your hands!", image_url, gender, style, save_path_5, vidDone)
+        vidDone += 1
+        print(f"Video Done {vidDone} ")
+
+        post_requests_mAndf("We are the second-best visitor today! We are rated 4.7! Confetti! Red heart! Clapping hands!", image_url, gender, style, save_path_6, vidDone)
+        vidDone += 1
+        print(f"Video Done {vidDone} ")
+
+        # # high
+        post_requests_mAndf("Our pulse is too fast. Our sleep quality is below average. We should reduce stress. Sit down in the corner and practice meditation. You’ve got this!", image_url, gender, style, save_path_7, vidDone)
+        vidDone += 1
+        print(f"Video Done {vidDone} ")
+
+        post_requests_mAndf("We have earned 3,534 coins. Well done!", image_url, gender, style, save_path_8, vidDone)
+        vidDone += 1
+        print(f"Video Done {vidDone} ")
+
+        post_requests_mAndf("We are doing great! Our bank balance is fantastic. Unfortunately, our screen time is well above average; please stop looking at the screens for a while.", image_url, gender, style, save_path_9, vidDone)
+        vidDone += 1
+        print(f"Video Done {vidDone} ")
+
+        runOpenframeworks(vidDone)
 
 
 def runOpenframeworks(vidDone):
